@@ -147,11 +147,15 @@ nav ul li a.btn-login:hover {
     background-color: var(--secondary-blue);
 }
 
-/* --- HERO SECTION (Iliyoboreshwa na Collage) --- */
+/* --- HERO SECTION (Full Screen - Imehesabiwa na Banner) --- */
 .hero {
     background-color: var(--primary-blue);
     color: var(--white);
-    padding: 60px 0;
+    /* Tunatoa urefu wa navbar (120px) na banner (80px) ili wote wakae screen moja */
+    min-height: calc(100vh - 200px);
+    display: flex;
+    align-items: center;
+    padding: 30px 0; /* Padding imepunguzwa zaidi */
     position: relative;
     overflow: hidden;
     background-image: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.05) 0%, transparent 50%),
@@ -239,7 +243,6 @@ nav ul li a.btn-login:hover {
     height: 400px;
 }
 
-/* Maumbo ya picha (Circles) */
 .collage-circle {
     position: absolute;
     border-radius: 50%;
@@ -261,7 +264,6 @@ nav ul li a.btn-login:hover {
     z-index: 10;
 }
 
-/* Picha ya Kwanza (Kubwa - Kati) */
 .circle-1 {
     width: 220px;
     height: 220px;
@@ -271,7 +273,6 @@ nav ul li a.btn-login:hover {
     z-index: 3;
 }
 
-/* Picha ya Pili (Ndogo - Juu Kushoto) */
 .circle-2 {
     width: 140px;
     height: 140px;
@@ -280,7 +281,6 @@ nav ul li a.btn-login:hover {
     z-index: 4;
 }
 
-/* Picha ya Tatu (Ndogo - Chini Kulia) */
 .circle-3 {
     width: 140px;
     height: 140px;
@@ -289,7 +289,6 @@ nav ul li a.btn-login:hover {
     z-index: 2;
 }
 
-/* Maumbo ya Mapambo ya Bluu (Background Shapes) */
 .collage-bg {
     position: absolute;
     border-radius: 50%;
@@ -313,51 +312,50 @@ nav ul li a.btn-login:hover {
     left: -10px;
 }
 
-/* --- PROMO BANNER --- */
+/* --- PROMO BANNER (Marquee - Nyembamba kama Navbar) --- */
+
 .promo-banner {
     background-color: var(--secondary-blue);
     color: var(--white);
-    padding: 40px 0;
-    margin-top: -30px;
-    border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    padding: 25px 0; /* Height imeongezwa kutoka 15px hadi 25px */
+    overflow: hidden;
     position: relative;
     z-index: 10;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    overflow: hidden;
 }
 
-.promo-banner .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.marquee {
     width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
-.promo-text h2 {
-    font-size: 32px;
-    margin-bottom: 10px;
+.marquee-content {
+    display: inline-block;
+    animation: scroll-left 30s linear infinite;
+    padding-left: 100%;
 }
 
-.promo-text h2 span {
+.marquee-content span {
+    display: inline-block;
+    padding: 0 40px;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.marquee-content span i {
     color: var(--accent-yellow);
+    margin-right: 8px;
 }
 
-.promo-text ul {
-    margin-top: 15px;
-}
-
-.promo-text ul li {
-    margin-bottom: 5px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.promo-text ul li i {
-    color: var(--accent-yellow);
+/* Animation ya kutembea kushoto */
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
 }
 
 /* --- SECTION TITLES --- */
@@ -585,6 +583,10 @@ footer {
     header {
         padding: 20px 0;
     }
+    .hero {
+        min-height: auto; /* Kwenye tablet, hairuhusiwi kujaa screen yote */
+        padding: 50px 0;
+    }
     .hero .container { 
         flex-direction: column; 
         text-align: center; 
@@ -615,14 +617,6 @@ footer {
     .circle-3 { width: 110px; height: 110px; }
     .bg-1 { width: 280px; height: 280px; }
     .bg-2 { width: 200px; height: 200px; }
-    .promo-banner .container { 
-        flex-direction: column; 
-        text-align: center; 
-    }
-    .promo-text ul { 
-        display: inline-block; 
-        text-align: left; 
-    }
     .faq-container { 
         flex-direction: column; 
     }
@@ -632,43 +626,160 @@ footer {
     }
 }
 
-@media (max-width: 768px) {
+/* --- ABOUT SECTION (Accordion) --- */
+.about-section {
+    padding: 60px 0;
+    background-color: var(--white);
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--text-light);
+    font-size: 15px;
+    margin-top: -30px;
+    margin-bottom: 40px;
+}
+
+/* Accordion inatumia upana kamili wa container (sawa na Navbar) */
+.accordion {
+    width: 100%;
+    max-width: 1200px; /* Sawa na .container */
+    margin: 0 auto;
+}
+
+.accordion-item {
+    margin-bottom: 15px;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.accordion-header {
+    width: 100%;
+    background-color: #f0f0f0;
+    color: var(--text-dark);
+    padding: 18px 25px;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: left;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+    font-family: var(--font-main);
+}
+
+.accordion-header:hover {
+    background-color: #e5e5e5;
+}
+
+.accordion-header i {
+    transition: transform 0.3s ease;
+    color: var(--primary-blue);
+}
+
+/* Rangi ya bluu kwa kichwa kilichofunguliwa */
+.accordion-item.active .accordion-header {
+    background-color: var(--primary-blue);
+    color: var(--white);
+}
+
+.accordion-item.active .accordion-header i {
+    color: var(--white);
+    transform: rotate(180deg);
+}
+
+/* Content ya Accordion - Ghafla (Hakuna Transition) */
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    background-color: var(--white);
+    padding: 0 25px;
+    /* Hakuna transition hapa - inafungua na kufunga ghafla */
+}
+
+.accordion-item.active .accordion-content {
+    max-height: none; /* Inaruhusu content yote kuonekana */
+    padding: 25px;
+}
+
+
+.accordion-content p {
+    color: var(--text-light);
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.accordion-content p:last-child {
+    margin-bottom: 0;
+}
+
+.accordion-content ul {
+    margin: 15px 0;
+    padding-left: 20px;
+}
+
+.accordion-content ul li {
+    color: var(--text-light);
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 8px;
+    list-style: disc;
+}
+
+.accordion-content ul li strong {
+    color: var(--primary-blue);
+}
+
+
+
+@media (max-width: 992px) {
     header {
-        padding: 15px 0;
+        padding: 20px 0;
     }
-    header .container { 
+    /* Kwenye tablet, tunarudisha urefu wa kawaida ili kuepuka kubana */
+    .hero {
+        min-height: auto;
+        padding: 50px 0;
+    }
+    .hero .container { 
         flex-direction: column; 
-        gap: 15px; 
-    }
-    nav ul { 
-        flex-wrap: wrap; 
-        justify-content: center; 
-        gap: 12px; 
-    }
-    nav ul li a {
-        font-size: 11px;
-    }
-    .grid-cards { 
-        grid-template-columns: 1fr; 
-    }
-    .hero-content h1 { 
-        font-size: 24px; 
-    }
-    .hero-buttons { 
-        flex-direction: column; 
-        align-items: center; 
-    }
-    .btn { 
-        width: 100%; 
         text-align: center; 
     }
-    .hero-collage {
-        width: 280px;
-        height: 280px;
+    .hero-content {
+        max-width: 100%;
     }
-    .circle-1 { width: 150px; height: 150px; }
-    .circle-2 { width: 90px; height: 90px; }
-    .circle-3 { width: 90px; height: 90px; }
-    .bg-1 { width: 230px; height: 230px; }
-    .bg-2 { width: 160px; height: 160px; }
+    .hero-content h1 { 
+        font-size: 30px; 
+    }
+    .hero-content p {
+        font-size: 14px;
+        margin: 0 auto 30px;
+    }
+    .hero-buttons { 
+        justify-content: center; 
+    }
+    .hero-image {
+        min-height: 350px;
+        margin-top: 30px;
+    }
+    .hero-collage {
+        width: 320px;
+        height: 320px;
+    }
+    .circle-1 { width: 180px; height: 180px; }
+    .circle-2 { width: 110px; height: 110px; }
+    .circle-3 { width: 110px; height: 110px; }
+    .bg-1 { width: 280px; height: 280px; }
+    .bg-2 { width: 200px; height: 200px; }
+    .faq-container { 
+        flex-direction: column; 
+    }
+    .faq-list { 
+        border-right: none; 
+        border-bottom: 1px solid #eee; 
+    }
 }
