@@ -62,7 +62,7 @@ ul {
     color: var(--primary-blue);
 }
 
-/* --- HEADER (Nafasi kubwa kama eGA) --- */
+/* --- HEADER --- */
 header {
     background-color: var(--white);
     padding: 30px 0;
@@ -92,7 +92,7 @@ header .container {
     font-size: 24px;
 }
 
-/* --- NAVIGATION LINKS (Font ndogo, nafasi kubwa) --- */
+/* --- NAVIGATION LINKS --- */
 nav ul {
     display: flex;
     gap: 22px;
@@ -110,7 +110,6 @@ nav ul li a {
     text-transform: uppercase;
 }
 
-/* Hover & Active: Mstari mwembamba wa chini */
 nav ul li a::after {
     content: '';
     position: absolute;
@@ -127,7 +126,6 @@ nav ul li a.active::after {
     width: 100%;
 }
 
-/* Button ya Portal Login */
 nav ul li a.btn-login {
     color: var(--white) !important;
     padding: 8px 18px;
@@ -147,15 +145,14 @@ nav ul li a.btn-login:hover {
     background-color: var(--secondary-blue);
 }
 
-/* --- HERO SECTION (Full Screen - Imehesabiwa na Banner) --- */
+/* --- HERO SECTION --- */
 .hero {
     background-color: var(--primary-blue);
     color: var(--white);
-    /* Tunatoa urefu wa navbar (120px) na banner (80px) ili wote wakae screen moja */
     min-height: calc(100vh - 200px);
     display: flex;
     align-items: center;
-    padding: 30px 0; /* Padding imepunguzwa zaidi */
+    padding: 30px 0;
     position: relative;
     overflow: hidden;
     background-image: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.05) 0%, transparent 50%),
@@ -227,7 +224,7 @@ nav ul li a.btn-login:hover {
     color: var(--text-dark);
 }
 
-/* --- HERO COLLAGE (Picha kwenye Maumbo) --- */
+/* --- HERO COLLAGE --- */
 .hero-image {
     flex: 1;
     display: flex;
@@ -312,12 +309,11 @@ nav ul li a.btn-login:hover {
     left: -10px;
 }
 
-/* --- PROMO BANNER (Marquee - Nyembamba kama Navbar) --- */
-
+/* --- PROMO BANNER (Marquee) --- */
 .promo-banner {
     background-color: var(--secondary-blue);
     color: var(--white);
-    padding: 25px 0; /* Height imeongezwa kutoka 15px hadi 25px */
+    padding: 25px 0;
     overflow: hidden;
     position: relative;
     z-index: 10;
@@ -348,20 +344,15 @@ nav ul li a.btn-login:hover {
     margin-right: 8px;
 }
 
-/* Animation ya kutembea kushoto */
 @keyframes scroll-left {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-100%);
-    }
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
 }
 
 /* --- SECTION TITLES --- */
 .section-title {
     text-align: center;
-    margin: 60px 0 40px;
+    margin: 60px 0 15px;
     font-size: 28px;
     color: var(--primary-blue);
     position: relative;
@@ -377,6 +368,45 @@ nav ul li a.btn-login:hover {
     width: 40px;
     height: 3px;
     background-color: var(--primary-blue);
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--text-light);
+    font-size: 15px;
+    margin-bottom: 40px;
+}
+
+/* --- SECTION TITLES LIGHT (Juu ya Picha) --- */
+.section-title-light {
+    font-size: 38px;
+    color: var(--white);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: -40px;
+    margin-bottom: 12px;
+    text-transform: capitalize;
+    letter-spacing: 0.5px;
+}
+
+.section-title-light::before, 
+.section-title-light::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--accent-yellow);
+}
+
+.section-subtitle-light {
+    color: var(--accent-yellow);
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    text-transform: capitalize;
+    font-weight: 500;
 }
 
 /* --- CARDS GRID --- */
@@ -430,66 +460,254 @@ nav ul li a.btn-login:hover {
     margin-bottom: 60px;
 }
 
-/* --- FAQ SECTION --- */
-.faq-section {
-    background-color: var(--light-bg);
+/* --- ABOUT SECTION (Accordion) --- */
+.about-section {
     padding: 60px 0;
-}
-
-.faq-container {
-    display: flex;
-    gap: 40px;
     background-color: var(--white);
-    border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
-.faq-list {
-    flex: 1;
-    padding: 30px;
-    border-right: 1px solid #eee;
+.accordion {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
 }
 
-.faq-item {
-    padding: 15px 0;
-    border-bottom: 1px solid #eee;
+.accordion-item {
+    margin-bottom: 15px;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    background-color: var(--white);
+    position: relative;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.accordion-header {
+    width: 100%;
+    background-color: #f0f0f0;
+    color: var(--text-dark);
+    padding: 18px 25px;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: left;
+    border: none;
+    cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: var(--font-main);
 }
 
-.faq-item:last-child {
-    border-bottom: none;
+.accordion-header:hover {
+    background-color: #e5e5e5;
 }
 
-.faq-item span {
-    font-weight: 500;
-    color: var(--text-dark);
-}
-
-.faq-item i {
+.accordion-header i {
+    transition: transform 0.3s ease;
     color: var(--primary-blue);
 }
 
-.faq-answer {
-    flex: 1.5;
-    padding: 30px;
-    background-color: var(--light-bg);
+.accordion-item.active .accordion-header {
+    background-color: var(--primary-blue);
+    color: var(--white);
 }
 
-.faq-answer h3 {
-    color: var(--primary-blue);
+.accordion-item.active .accordion-header i {
+    color: var(--white);
+    transform: rotate(180deg);
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    background-color: var(--white);
+    padding: 0 25px;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.4s ease, padding 0.4s ease;
+}
+
+.accordion-item.active .accordion-content {
+    max-height: 1000px;
+    padding: 25px;
+    opacity: 1;
+}
+
+.accordion-item.closing {
+    animation: cardSlideOutRight 0.5s ease forwards;
+}
+
+.accordion-item.opening {
+    animation: cardSlideInLeft 0.5s ease forwards;
+}
+
+@keyframes cardSlideOutRight {
+    0% { transform: translateX(0); opacity: 1; }
+    100% { transform: translateX(150%); opacity: 0; }
+}
+
+@keyframes cardSlideInLeft {
+    0% { transform: translateX(-150%); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+}
+
+.accordion-content p {
+    color: var(--text-light);
+    font-size: 15px;
+    line-height: 1.8;
     margin-bottom: 15px;
 }
 
-.faq-answer p {
-    color: var(--text-light);
-    font-size: 15px;
+.accordion-content p:last-child {
+    margin-bottom: 0;
 }
 
-/* --- FORMS (For Contact & Admissions) --- */
+.accordion-content ul {
+    margin: 15px 0;
+    padding-left: 20px;
+}
+
+.accordion-content ul li {
+    color: var(--text-light);
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 8px;
+    list-style: disc;
+}
+
+.accordion-content ul li strong {
+    color: var(--primary-blue);
+}
+
+/* --- ACADEMICS SECTION --- */
+.academics-section {
+    padding: 0 0 80px;
+    background-color: var(--light-bg);
+    overflow: hidden;
+}
+
+.academics-hero {
+    position: relative;
+    width: 100%;
+    height: 450px;
+    overflow: hidden;
+}
+
+.academics-hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: blur(3px) brightness(0.7);
+    transform: scale(1.05);
+}
+
+.academics-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(11, 94, 122, 0.85), rgba(11, 94, 122, 0.5));
+    z-index: 1;
+}
+
+.academics-hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 2;
+    width: 100%;
+    padding: 0 20px;
+}
+
+.academics-cards-wrapper {
+    position: relative;
+    margin-top: -80px;
+    z-index: 10;
+    padding: 0 5%;
+}
+
+.academics-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.academic-card {
+    background-color: var(--white);
+    border-radius: 10px;
+    text-align: center;
+    padding: 0 20px 30px;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 5px solid var(--primary-blue);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.academic-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+.card-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--white);
+    margin-top: -40px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    border: 4px solid var(--white);
+    transition: transform 0.3s ease;
+    margin-bottom: 15px;
+}
+
+.academic-card:hover .card-circle {
+    transform: scale(1.1);
+}
+
+.card-circle i {
+    font-size: 34px;
+}
+
+.card-blue { border-top-color: #0b5e7a; }
+.card-blue .card-circle i { color: #0b5e7a; }
+
+.card-yellow { border-top-color: #e6a817; }
+.card-yellow .card-circle i { color: #e6a817; }
+
+.card-dark { border-top-color: #333333; }
+.card-dark .card-circle i { color: #333333; }
+
+.card-orange { border-top-color: #d9534f; }
+.card-orange .card-circle i { color: #d9534f; }
+
+.card-body h3 {
+    color: var(--primary-blue);
+    font-size: 18px;
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.card-body p {
+    color: var(--text-light);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+/* --- FORMS --- */
 .form-container {
     background-color: var(--white);
     padding: 40px;
@@ -584,512 +802,6 @@ footer {
         padding: 20px 0;
     }
     .hero {
-        min-height: auto; /* Kwenye tablet, hairuhusiwi kujaa screen yote */
-        padding: 50px 0;
-    }
-    .hero .container { 
-        flex-direction: column; 
-        text-align: center; 
-    }
-    .hero-content {
-        max-width: 100%;
-    }
-    .hero-content h1 { 
-        font-size: 30px; 
-    }
-    .hero-content p {
-        font-size: 14px;
-        margin: 0 auto 30px;
-    }
-    .hero-buttons { 
-        justify-content: center; 
-    }
-    .hero-image {
-        min-height: 350px;
-        margin-top: 30px;
-    }
-    .hero-collage {
-        width: 320px;
-        height: 320px;
-    }
-    .circle-1 { width: 180px; height: 180px; }
-    .circle-2 { width: 110px; height: 110px; }
-    .circle-3 { width: 110px; height: 110px; }
-    .bg-1 { width: 280px; height: 280px; }
-    .bg-2 { width: 200px; height: 200px; }
-    .faq-container { 
-        flex-direction: column; 
-    }
-    .faq-list { 
-        border-right: none; 
-        border-bottom: 1px solid #eee; 
-    }
-}
-
-
-/* --- ABOUT SECTION (Accordion) --- */
-.about-section {
-    padding: 60px 0;
-    background-color: var(--white);
-    overflow: hidden; /* Muhimu kwa animation ya card */
-}
-
-.section-subtitle {
-    text-align: center;
-    color: var(--text-light);
-    font-size: 15px;
-    margin-top: -30px;
-    margin-bottom: 40px;
-}
-
-.accordion {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    position: relative; /* Muhimu kwa animation ya card */
-}
-
-/* --- CARD (Accordion Item) --- */
-.accordion-item {
-    margin-bottom: 15px;
-    border-radius: 6px;
-    overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    background-color: var(--white);
-    position: relative;
-    transition: transform 0.5s ease, opacity 0.5s ease;
-}
-
-/* Kichwa cha Card */
-.accordion-header {
-    width: 100%;
-    background-color: #f0f0f0;
-    color: var(--text-dark);
-    padding: 18px 25px;
-    font-size: 16px;
-    font-weight: 600;
-    text-align: left;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: all 0.3s ease;
-    font-family: var(--font-main);
-}
-
-.accordion-header:hover {
-    background-color: #e5e5e5;
-}
-
-.accordion-header i {
-    transition: transform 0.3s ease;
-    color: var(--primary-blue);
-}
-
-/* Rangi ya bluu kwa kichwa kilichofunguliwa */
-.accordion-item.active .accordion-header {
-    background-color: var(--primary-blue);
-    color: var(--white);
-}
-
-.accordion-item.active .accordion-header i {
-    color: var(--white);
-    transform: rotate(180deg);
-}
-
-/* --- Content ya Card --- */
-.accordion-content {
-    max-height: 0;
-    overflow: hidden;
-    background-color: var(--white);
-    padding: 0 25px;
-    opacity: 0;
-    transition: max-height 0.4s ease, opacity 0.4s ease, padding 0.4s ease;
-}
-
-.accordion-item.active .accordion-content {
-    max-height: 1000px;
-    padding: 25px;
-    opacity: 1;
-}
-
-/* --- CARD ANIMATIONS (Slide to Right / Slide from Left) --- */
-
-/* Card inayofungwa: Inatoka kwenda kulia */
-.accordion-item.closing {
-    animation: cardSlideOutRight 0.5s ease forwards;
-}
-
-/* Card inayofunguliwa: Inaingia kutoka kushoto */
-.accordion-item.opening {
-    animation: cardSlideInLeft 0.5s ease forwards;
-}
-
-/* Keyframes: Card inatoka kwenda kulia */
-@keyframes cardSlideOutRight {
-    0% {
-        transform: translateX(0);
-        opacity: 1;
-    }
-    100% {
-        transform: translateX(150%);
-        opacity: 0;
-    }
-}
-
-/* Keyframes: Card inaingia kutoka kushoto */
-@keyframes cardSlideInLeft {
-    0% {
-        transform: translateX(-150%);
-        opacity: 0;
-    }
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-/* Content Text */
-.accordion-content p {
-    color: var(--text-light);
-    font-size: 15px;
-    line-height: 1.8;
-    margin-bottom: 15px;
-}
-
-.accordion-content p:last-child {
-    margin-bottom: 0;
-}
-
-.accordion-content ul {
-    margin: 15px 0;
-    padding-left: 20px;
-}
-
-.accordion-content ul li {
-    color: var(--text-light);
-    font-size: 15px;
-    line-height: 1.8;
-    margin-bottom: 8px;
-    list-style: disc;
-}
-
-.accordion-content ul li strong {
-    color: var(--primary-blue);
-}
-
-
-
-
-/* --- ACADEMICS SECTION --- */
-.academics-section {
-    padding: 60px 0;
-    background-color: var(--white);
-    overflow: hidden;
-}
-
-/* --- Banner Kubwa ya Academics --- */
-.academics-banner {
-    position: relative;
-    width: 100%;
-    height: 400px;
-    overflow: hidden;
-    margin-bottom: 60px;
-}
-
-.academics-banner img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-.academics-banner:hover img {
-    transform: scale(1.05);
-}
-
-.banner-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to right, rgba(11, 94, 122, 0.9), rgba(11, 94, 122, 0.4));
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0 10%;
-    color: var(--white);
-}
-
-.banner-overlay h3 {
-    font-size: 36px;
-    margin-bottom: 15px;
-    color: var(--accent-yellow);
-    max-width: 600px;
-    line-height: 1.3;
-}
-
-.banner-overlay p {
-    font-size: 16px;
-    max-width: 600px;
-    line-height: 1.7;
-    opacity: 0.95;
-}
-
-/* --- Accordion ya Academics --- */
-.academics-accordion {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* Icon kwenye kichwa cha accordion */
-.accordion-header span i {
-    margin-right: 12px;
-    color: var(--accent-yellow);
-    font-size: 18px;
-}
-
-.accordion-item.active .accordion-header span i {
-    color: var(--accent-yellow);
-}
-
-
-
-/* --- ACADEMICS SECTION --- */
-.academics-section {
-    padding: 0 0 60px;
-    background-color: var(--white);
-    overflow: hidden;
-}
-
-/* --- Banner Kubwa ya Juu --- */
-.academics-hero {
-    position: relative;
-    width: 100%;
-    height: 500px;
-    overflow: hidden;
-    margin-bottom: 0;
-}
-
-.academics-hero img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center top;
-}
-
-.academics-hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, rgba(11, 94, 122, 0.2), rgba(11, 94, 122, 0.6));
-}
-
-/* --- Cards za Programs (Zinazopanda juu ya Banner) --- */
-.academics-cards-wrapper {
-    position: relative;
-    margin-top: -120px; /* Inapanda juu ya banner */
-    z-index: 10;
-    padding: 0 5%;
-}
-
-.academics-cards {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    max-width: 1300px;
-    margin: 0 auto;
-}
-
-/* Kila Card ya Academic */
-.academic-card {
-    background-color: var(--primary-blue);
-    border-radius: 10px;
-    text-align: center;
-    padding: 60px 20px 30px;
-    position: relative;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin-top: 50px; /* Nafasi kwa ajili ya duara */
-}
-
-.academic-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
-}
-
-/* Duara la Icon Juu ya Card */
-.card-circle {
-    position: absolute;
-    top: -50px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--white);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    border: 5px solid var(--white);
-    transition: transform 0.3s ease;
-}
-
-.academic-card:hover .card-circle {
-    transform: translateX(-50%) scale(1.1);
-}
-
-.card-circle i {
-    font-size: 42px;
-}
-
-/* Rangi za Kila Card */
-.card-blue {
-    background-color: #0b5e7a;
-}
-.card-blue .card-circle i {
-    color: #0b5e7a;
-}
-
-.card-yellow {
-    background-color: #e6a817;
-}
-.card-yellow .card-circle i {
-    color: #e6a817;
-}
-
-.card-dark {
-    background-color: #333333;
-}
-.card-dark .card-circle i {
-    color: #333333;
-}
-
-.card-orange {
-    background-color: #d9534f;
-}
-.card-orange .card-circle i {
-    color: #d9534f;
-}
-
-/* Maudhui ya Card */
-.card-body h3 {
-    color: var(--white);
-    font-size: 18px;
-    margin-bottom: 12px;
-    font-weight: 600;
-}
-
-.card-body p {
-    color: var(--white);
-    font-size: 13px;
-    line-height: 1.6;
-    opacity: 0.9;
-}
-
-/* --- RESPONSIVE DESIGN KWA ACADEMICS --- */
-@media (max-width: 992px) {
-    .academics-hero {
-        height: 350px;
-    }
-    .academics-cards {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-    }
-    .academics-cards-wrapper {
-        margin-top: -80px;
-    }
-    .card-circle {
-        width: 80px;
-        height: 80px;
-        top: -40px;
-    }
-    .card-circle i {
-        font-size: 34px;
-    }
-    .academic-card {
-        padding: 50px 15px 25px;
-    }
-}
-
-@media (max-width: 768px) {
-    .academics-hero {
-        height: 250px;
-    }
-    .academics-cards {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
-    .academics-cards-wrapper {
-        margin-top: -60px;
-        padding: 0 20px;
-    }
-    .academic-card {
-        margin-top: 40px;
-    }
-    .card-circle {
-        width: 70px;
-        height: 70px;
-        top: -35px;
-    }
-    .card-circle i {
-        font-size: 28px;
-    }
-    .card-body h3 {
-        font-size: 16px;
-    }
-    .card-body p {
-        font-size: 12px;
-    }
-}
-
-
-/* --- RESPONSIVE DESIGN KWA ACADEMICS --- */
-@media (max-width: 992px) {
-    .academics-banner {
-        height: 300px;
-    }
-    .banner-overlay {
-        padding: 0 5%;
-    }
-    .banner-overlay h3 {
-        font-size: 26px;
-    }
-    .banner-overlay p {
-        font-size: 14px;
-    }
-}
-
-@media (max-width: 768px) {
-    .academics-banner {
-        height: 250px;
-    }
-    .banner-overlay h3 {
-        font-size: 20px;
-    }
-    .banner-overlay p {
-        font-size: 13px;
-    }
-    .accordion-header span i {
-        font-size: 15px;
-        margin-right: 8px;
-    }
-}
-
-
-
-@media (max-width: 992px) {
-    header {
-        padding: 20px 0;
-    }
-    /* Kwenye tablet, tunarudisha urefu wa kawaida ili kuepuka kubana */
-    .hero {
         min-height: auto;
         padding: 50px 0;
     }
@@ -1123,11 +835,116 @@ footer {
     .circle-3 { width: 110px; height: 110px; }
     .bg-1 { width: 280px; height: 280px; }
     .bg-2 { width: 200px; height: 200px; }
-    .faq-container { 
-        flex-direction: column; 
+    
+    .academics-hero {
+        height: 350px;
     }
-    .faq-list { 
-        border-right: none; 
-        border-bottom: 1px solid #eee; 
+    .section-title-light {
+        font-size: 30px;
+        gap: 15px;
+        margin-top: -30px;
+    }
+    .section-title-light::before, 
+    .section-title-light::after {
+        width: 40px;
+        height: 3px;
+    }
+    .section-subtitle-light {
+        font-size: 14px;
+    }
+    .academics-cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    .academics-cards-wrapper {
+        margin-top: -60px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 15px 0;
+    }
+    header .container { 
+        flex-direction: column; 
+        gap: 15px; 
+    }
+    nav ul { 
+        flex-wrap: wrap; 
+        justify-content: center; 
+        gap: 12px; 
+    }
+    nav ul li a {
+        font-size: 11px;
+    }
+    
+    .grid-cards { 
+        grid-template-columns: 1fr; 
+    }
+    
+    .hero-content h1 { 
+        font-size: 24px; 
+    }
+    .hero-buttons { 
+        flex-direction: column; 
+        align-items: center; 
+    }
+    .btn { 
+        width: 100%; 
+        text-align: center; 
+    }
+    .hero-collage {
+        width: 280px;
+        height: 280px;
+    }
+    .circle-1 { width: 150px; height: 150px; }
+    .circle-2 { width: 90px; height: 90px; }
+    .circle-3 { width: 90px; height: 90px; }
+    .bg-1 { width: 230px; height: 230px; }
+    .bg-2 { width: 160px; height: 160px; }
+    
+    .marquee-content span {
+        font-size: 12px;
+        padding: 0 20px;
+    }
+    
+    .academics-hero {
+        height: 280px;
+    }
+    .section-title-light {
+        font-size: 24px;
+        gap: 10px;
+        margin-top: -20px;
+        letter-spacing: 0px;
+    }
+    .section-title-light::before, 
+    .section-title-light::after {
+        width: 25px;
+        height: 2px;
+    }
+    .section-subtitle-light {
+        font-size: 12px;
+    }
+    .academics-cards {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding: 0 10px;
+    }
+    .academics-cards-wrapper {
+        margin-top: -50px;
+    }
+    .card-circle {
+        width: 70px;
+        height: 70px;
+        margin-top: -35px;
+    }
+    .card-circle i {
+        font-size: 28px;
+    }
+    .card-body h3 {
+        font-size: 16px;
+    }
+    .card-body p {
+        font-size: 12px;
     }
 }
