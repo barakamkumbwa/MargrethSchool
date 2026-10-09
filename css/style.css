@@ -626,10 +626,12 @@ footer {
     }
 }
 
+
 /* --- ABOUT SECTION (Accordion) --- */
 .about-section {
     padding: 60px 0;
     background-color: var(--white);
+    overflow: hidden; /* Muhimu kwa animation ya card */
 }
 
 .section-subtitle {
@@ -640,20 +642,25 @@ footer {
     margin-bottom: 40px;
 }
 
-/* Accordion inatumia upana kamili wa container (sawa na Navbar) */
 .accordion {
     width: 100%;
-    max-width: 1200px; /* Sawa na .container */
+    max-width: 1200px;
     margin: 0 auto;
+    position: relative; /* Muhimu kwa animation ya card */
 }
 
+/* --- CARD (Accordion Item) --- */
 .accordion-item {
     margin-bottom: 15px;
     border-radius: 6px;
     overflow: hidden;
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    background-color: var(--white);
+    position: relative;
+    transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
+/* Kichwa cha Card */
 .accordion-header {
     width: 100%;
     background-color: #f0f0f0;
@@ -691,21 +698,59 @@ footer {
     transform: rotate(180deg);
 }
 
-/* Content ya Accordion - Ghafla (Hakuna Transition) */
+/* --- Content ya Card --- */
 .accordion-content {
     max-height: 0;
     overflow: hidden;
     background-color: var(--white);
     padding: 0 25px;
-    /* Hakuna transition hapa - inafungua na kufunga ghafla */
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.4s ease, padding 0.4s ease;
 }
 
 .accordion-item.active .accordion-content {
-    max-height: none; /* Inaruhusu content yote kuonekana */
+    max-height: 1000px;
     padding: 25px;
+    opacity: 1;
 }
 
+/* --- CARD ANIMATIONS (Slide to Right / Slide from Left) --- */
 
+/* Card inayofungwa: Inatoka kwenda kulia */
+.accordion-item.closing {
+    animation: cardSlideOutRight 0.5s ease forwards;
+}
+
+/* Card inayofunguliwa: Inaingia kutoka kushoto */
+.accordion-item.opening {
+    animation: cardSlideInLeft 0.5s ease forwards;
+}
+
+/* Keyframes: Card inatoka kwenda kulia */
+@keyframes cardSlideOutRight {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(150%);
+        opacity: 0;
+    }
+}
+
+/* Keyframes: Card inaingia kutoka kushoto */
+@keyframes cardSlideInLeft {
+    0% {
+        transform: translateX(-150%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Content Text */
 .accordion-content p {
     color: var(--text-light);
     font-size: 15px;
@@ -732,6 +777,309 @@ footer {
 
 .accordion-content ul li strong {
     color: var(--primary-blue);
+}
+
+
+
+
+/* --- ACADEMICS SECTION --- */
+.academics-section {
+    padding: 60px 0;
+    background-color: var(--white);
+    overflow: hidden;
+}
+
+/* --- Banner Kubwa ya Academics --- */
+.academics-banner {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    margin-bottom: 60px;
+}
+
+.academics-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.academics-banner:hover img {
+    transform: scale(1.05);
+}
+
+.banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(11, 94, 122, 0.9), rgba(11, 94, 122, 0.4));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 10%;
+    color: var(--white);
+}
+
+.banner-overlay h3 {
+    font-size: 36px;
+    margin-bottom: 15px;
+    color: var(--accent-yellow);
+    max-width: 600px;
+    line-height: 1.3;
+}
+
+.banner-overlay p {
+    font-size: 16px;
+    max-width: 600px;
+    line-height: 1.7;
+    opacity: 0.95;
+}
+
+/* --- Accordion ya Academics --- */
+.academics-accordion {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Icon kwenye kichwa cha accordion */
+.accordion-header span i {
+    margin-right: 12px;
+    color: var(--accent-yellow);
+    font-size: 18px;
+}
+
+.accordion-item.active .accordion-header span i {
+    color: var(--accent-yellow);
+}
+
+
+
+/* --- ACADEMICS SECTION --- */
+.academics-section {
+    padding: 0 0 60px;
+    background-color: var(--white);
+    overflow: hidden;
+}
+
+/* --- Banner Kubwa ya Juu --- */
+.academics-hero {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    margin-bottom: 0;
+}
+
+.academics-hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+}
+
+.academics-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(11, 94, 122, 0.2), rgba(11, 94, 122, 0.6));
+}
+
+/* --- Cards za Programs (Zinazopanda juu ya Banner) --- */
+.academics-cards-wrapper {
+    position: relative;
+    margin-top: -120px; /* Inapanda juu ya banner */
+    z-index: 10;
+    padding: 0 5%;
+}
+
+.academics-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+/* Kila Card ya Academic */
+.academic-card {
+    background-color: var(--primary-blue);
+    border-radius: 10px;
+    text-align: center;
+    padding: 60px 20px 30px;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 50px; /* Nafasi kwa ajili ya duara */
+}
+
+.academic-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+}
+
+/* Duara la Icon Juu ya Card */
+.card-circle {
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--white);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    border: 5px solid var(--white);
+    transition: transform 0.3s ease;
+}
+
+.academic-card:hover .card-circle {
+    transform: translateX(-50%) scale(1.1);
+}
+
+.card-circle i {
+    font-size: 42px;
+}
+
+/* Rangi za Kila Card */
+.card-blue {
+    background-color: #0b5e7a;
+}
+.card-blue .card-circle i {
+    color: #0b5e7a;
+}
+
+.card-yellow {
+    background-color: #e6a817;
+}
+.card-yellow .card-circle i {
+    color: #e6a817;
+}
+
+.card-dark {
+    background-color: #333333;
+}
+.card-dark .card-circle i {
+    color: #333333;
+}
+
+.card-orange {
+    background-color: #d9534f;
+}
+.card-orange .card-circle i {
+    color: #d9534f;
+}
+
+/* Maudhui ya Card */
+.card-body h3 {
+    color: var(--white);
+    font-size: 18px;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.card-body p {
+    color: var(--white);
+    font-size: 13px;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+/* --- RESPONSIVE DESIGN KWA ACADEMICS --- */
+@media (max-width: 992px) {
+    .academics-hero {
+        height: 350px;
+    }
+    .academics-cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    .academics-cards-wrapper {
+        margin-top: -80px;
+    }
+    .card-circle {
+        width: 80px;
+        height: 80px;
+        top: -40px;
+    }
+    .card-circle i {
+        font-size: 34px;
+    }
+    .academic-card {
+        padding: 50px 15px 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .academics-hero {
+        height: 250px;
+    }
+    .academics-cards {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    .academics-cards-wrapper {
+        margin-top: -60px;
+        padding: 0 20px;
+    }
+    .academic-card {
+        margin-top: 40px;
+    }
+    .card-circle {
+        width: 70px;
+        height: 70px;
+        top: -35px;
+    }
+    .card-circle i {
+        font-size: 28px;
+    }
+    .card-body h3 {
+        font-size: 16px;
+    }
+    .card-body p {
+        font-size: 12px;
+    }
+}
+
+
+/* --- RESPONSIVE DESIGN KWA ACADEMICS --- */
+@media (max-width: 992px) {
+    .academics-banner {
+        height: 300px;
+    }
+    .banner-overlay {
+        padding: 0 5%;
+    }
+    .banner-overlay h3 {
+        font-size: 26px;
+    }
+    .banner-overlay p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    .academics-banner {
+        height: 250px;
+    }
+    .banner-overlay h3 {
+        font-size: 20px;
+    }
+    .banner-overlay p {
+        font-size: 13px;
+    }
+    .accordion-header span i {
+        font-size: 15px;
+        margin-right: 8px;
+    }
 }
 
 
