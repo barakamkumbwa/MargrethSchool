@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Margreth Pre & Primary School</title>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Link to External CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- TOP BAR -->
+    <div class="top-bar">
+        <div class="container">
+            <a href="https://www.instagram.com/mkumbwa_106_jr/" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i> @mkumbwa_106_jr</a>
+            <a href="https://www.instagram.com/mkumbwa_106_jr/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i> @mkumbwa_106_jr</a>
+        </div>
+    </div>
+
+    <!-- HEADER / NAVIGATION -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Margreth School</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About Us</a></li>
+                    <li><a href="index.html#academics">Academics</a></li>
+                    <li><a href="admissions/index.html">Admissions</a></li>
+                    <li><a href="news/index.html">News</a></li>
+                    <li><a href="gallery/index.html">Gallery</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                    <li><a href="#" class="btn-login">Portal Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- PAGE HERO / BANNER
+    <section class="page-hero">
+        <img src="images/contact-banner.jpg" alt="Contact Margreth Pre & Primary School">
+        <div class="page-hero-overlay"></div>
+        <div class="page-hero-content">
+            <h1>Contact Us</h1>
+            <p>Home / Contact</p>
+        </div>
+    </section> -->
+
+    <!-- CONTACT INTRO -->
+    <section class="contact-intro">
+        <div class="container">
+            <h2 class="section-title">Get in Touch</h2>
+            <p class="section-subtitle">We'd love to hear from you</p>
+            
+            <div class="intro-text">
+                <p>Whether you're a parent, guardian, or community member, we're here to answer your questions and help you learn more about Margreth Pre & Primary School. Reach out to us through any of the channels below.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT INFO CARDS -->
+    <section class="contact-info-section">
+        <div class="container">
+            <div class="contact-info-grid">
+                
+                <!-- Card 1: Phone -->
+                <div class="contact-info-card">
+                    <div class="contact-info-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h3>Call Us</h3>
+                    <p>Mon - Fri, 7:00 AM - 5:00 PM</p>
+                    <a href="tel:+255123456789">+255 123 456 789</a>
+                    <a href="tel:+255987654321">+255 987 654 321</a>
+                </div>
+
+                <!-- Card 2: Email -->
+                <div class="contact-info-card">
+                    <div class="contact-info-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email Us</h3>
+                    <p>We'll respond within 24 hours</p>
+                    <a href="mailto:info@margreth.ac.tz">info@margreth.ac.tz</a>
+                    <a href="mailto:admissions@margreth.ac.tz">admissions@margreth.ac.tz</a>
+                </div>
+
+                <!-- Card 3: Location -->
+                <div class="contact-info-card">
+                    <div class="contact-info-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Visit Us</h3>
+                    <p>Our school address</p>
+                    <span>P.O. Box 1234,<br>Dar es Salaam, Tanzania</span>
+                </div>
+
+                <!-- Card 4: Office Hours -->
+                <div class="contact-info-card">
+                    <div class="contact-info-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Office Hours</h3>
+                    <p>We're open</p>
+                    <span>Mon - Fri: 7:00 AM - 5:00 PM<br>Sat: 8:00 AM - 12:00 PM<br>Sun: Closed</span>
+                </div>
+
+            </div>
+
+            <div class="contact-social-row" aria-label="Social media accounts">
+                <span class="contact-social-label">Follow us</span>
+                <a href="https://www.instagram.com/mkumbwa_106_jr/" target="_blank" rel="noopener noreferrer" aria-label="Facebook: @mkumbwa_106_jr">
+                    <i class="fab fa-facebook-f" aria-hidden="true"></i> @mkumbwa_106_jr
+                </a>
+                <a href="https://www.instagram.com/mkumbwa_106_jr/" target="_blank" rel="noopener noreferrer" aria-label="Instagram: @mkumbwa_106_jr">
+                    <i class="fab fa-instagram" aria-hidden="true"></i> @mkumbwa_106_jr
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT FORM + MAP -->
+    <section class="contact-main-section">
+        <div class="container">
+            <div class="contact-main-grid">
+                
+                <!-- Left: Contact Form -->
+                <div class="contact-form-box">
+                    <h3><i class="fas fa-paper-plane"></i> Send Us a Message</h3>
+                    <p>Fill in the form below and we'll get back to you as soon as possible.</p>
+
+                    <div id="contact-form-status" class="form-status" role="status" aria-live="polite" hidden></div>
+                    <form action="send-message.php" method="POST" class="contact-form" id="contact-form">
+                        
+                        <div class="form-trap" aria-hidden="true">
+                            <label for="website">Leave this field empty</label>
+                            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Full Name <span>*</span></label>
+                                <input type="text" id="name" name="name" maxlength="100" placeholder="Enter your full name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address <span>*</span></label>
+                                <input type="email" id="email" name="email" maxlength="254" placeholder="example@email.com" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" maxlength="30" placeholder="+255 XXX XXX XXX">
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject <span>*</span></label>
+                                <select id="subject" name="subject" required>
+                                    <option value="">Select Subject</option>
+                                    <option value="general">General Inquiry</option>
+                                    <option value="admissions">Admissions</option>
+                                    <option value="fees">Fees & Payments</option>
+                                    <option value="academics">Academics</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="message">Your Message <span>*</span></label>
+                            <textarea id="message" name="message" rows="5" maxlength="5000" placeholder="Write your message here..." required></textarea>
+                        </div>
+
+                        <div class="form-submit">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-paper-plane"></i> Send Message
+                            </button>
+                        </div>
+
+                    </form>
+                </div>
+
+                <!-- Right: Map -->
+                <div class="contact-map-box">
+                    <h3><i class="fas fa-map-marked-alt"></i> Find Us on Map</h3>
+                    <p>Visit our school campus</p>
+                    
+                    <div class="map-container">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.8504782421914!2d39.2083!3d-6.8235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwNDknMjQuNiJTIDM5wrAxMicyOS45IkU!5e0!3m2!1sen!2stz!4v1234567890" 
+                            width="100%" 
+                            height="400" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> P.O. Box 1234, Dar es Salaam, Tanzania</li>
+                        <li><i class="fas fa-phone"></i> +255 123 456 789</li>
+                        <li><i class="fas fa-envelope"></i> info@margreth.ac.tz</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Help & Support</h4>
+                    <ul>
+                        <li><a href="#">Parent Portal</a></li>
+                        <li><a href="#">Student Portal</a></li>
+                        <li><a href="#">Fee Structure</a></li>
+                        <li><a href="#">School Calendar</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Related Information</h4>
+                    <ul>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="index.html#academics">Academics</a></li>
+                        <li><a href="admissions/index.html">Admissions</a></li>
+                        <li><a href="news/index.html">News & Events</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Copyright &copy; 2026 Margreth Pre & Primary School. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript File -->
+    <script src="js/main.js"></script>
+
+</body>
+</html>

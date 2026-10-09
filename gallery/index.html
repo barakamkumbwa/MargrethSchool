@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Margreth Pre & Primary School</title>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Link to External CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <!-- TOP BAR -->
+    <div class="top-bar">
+        <div class="container">
+            <a href="https://www.instagram.com/mkumbwa_106_jr/" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i> @mkumbwa_106_jr</a>
+            <a href="https://www.instagram.com/mkumbwa_106_jr/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i> @mkumbwa_106_jr</a>
+        </div>
+    </div>
+
+    <!-- HEADER / NAVIGATION -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Margreth School</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../index.html#about">About Us</a></li>
+                    <li><a href="../index.html#academics">Academics</a></li>
+                    <li><a href="../admissions/index.html">Admissions</a></li>
+                    <li><a href="../news/index.html">News</a></li>
+                    <li><a href="index.html" class="active">Gallery</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                    <li><a href="#" class="btn-login">Portal Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- GALLERY HERO (Kama Academics) -->
+    <section class="gallery-hero-section">
+        
+       <!-- Banner Kubwa ya Juu (Auto-Rotating Slideshow) -->
+        <div class="gallery-hero">
+            
+            <!-- Slides za Picha (Zinabadilika zenyewe) -->
+            <div class="gallery-slides">
+                <div class="slide slide-1 active"></div>
+                <div class="slide slide-2"></div>
+                <div class="slide slide-3"></div>
+                <div class="slide slide-4"></div>
+            </div>
+            
+            <!-- Overlay ya Bluu -->
+            <div class="gallery-hero-overlay"></div>
+            
+            <!-- Section Title Juu ya Picha -->
+            <div class="gallery-hero-content">
+                <h2 class="section-title-light">Gallery</h2>
+                <p class="section-subtitle-light">Margreth Pre & Primary School</p>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- GALLERY GRID (Picha za Shule) -->
+    <section class="gallery-section">
+        <div class="container">
+            
+            <!-- Filter Buttons (Hiari) -->
+            <div class="gallery-filter">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="classroom">Classroom</button>
+                <button class="filter-btn" data-filter="sports">Sports</button>
+                <button class="filter-btn" data-filter="events">Events</button>
+                <button class="filter-btn" data-filter="campus">Campus</button>
+            </div>
+
+            <!-- Gallery Grid (Masonry Layout) -->
+            <div class="gallery-grid">
+                
+                <!-- Photo 1: Kubwa (2x2) -->
+                <div class="gallery-item item-large" data-category="classroom">
+                    <div class="gallery-image">
+                        <img src="../images/gallery-1.jpg" alt="Classroom Activities">
+                    </div>
+                    <div class="gallery-overlay">
+                        <h3>Classroom Activities</h3>
+                        <p>Learning in progress</p>
+                        <a href="../images/gallery-1.jpg" class="gallery-zoom" target="_blank">
+                            <i class="fas fa-search-plus"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Photo 2: Wima (1x2) -->
+                <div class="gallery-item item-tall" data-category="sports">
+                    <div class="gallery-image">
+                        <img src="../images/gallery-2.jpg" alt="Sports Day">
+                    </div>
+                    <div class="gallery-overlay">
+                        <h3>Sports Day</h3>
+                        <p>Annual sports competition</p>
+                        <a href="../images/gallery-2.jpg" class="gallery-zoom" target="_blank">
+                            <i class="fas fa-search-plus"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Photo 3: Kawaida (1x1) -->
+                <div class="gallery-item" data-category="events">
+                    <div class="gallery-image">
+                        <img src="../images/gallery-3.jpg" alt="Graduation Ceremony">
+                    </div>
+                    <div class="gallery-overlay">
+                        <h3>Graduation Ceremony</h3>
+                        <p>Celebrating our graduates</p>
+                        <a href="../images/gallery-3.jpg" class="gallery-zoom" target="_blank">
+                            <i class="fas fa-search-plus"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Photo 4: Kawaida (1x1) -->
+                <div class="gallery-item" data-category="campus">
+                    <div class="gallery-image">
+                        <img src="../images/gallery-4.jpg" alt="School Campus">
+                    </div>
+                    <div class="gallery-overlay">
+                        <h3>School Campus</h3>
+                        <p>Our beautiful grounds</p>
+                        <a href="../images/gallery-4.jpg" class="gallery-zoom" target="_blank">
+                            <i class="fas fa-search-plus"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Photo 5: Kubwa (2x2) -->
+                <div class="gallery-item item-wide" data-category="classroom">
+                    <div class="gallery-image">
+                        <img src="../images/gallery-5.jpg" alt="Science Lab">
+                    </div>
+                    <div class="gallery-overlay">
+                        <h3>Science Lab</h3>
+                        <p>Hands-on experiments</p>
+                        <a href="../images/gallery-5.jpg" class="gallery-zoom" target="_blank">
+                            <i class="fas fa-search-plus"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Photo 6: Kawaida (1x1) -->
+                <div class="gallery-item" data-category="events">
+                    <div class="gallery-image">
+                        <img src="../images/gallery-6.jpg" alt="Cultural Day">
+                    </div>
+                    <div class="gallery-overlay">
+                        <h3>Cultural Day</h3>
+                        <p>Celebrating diversity</p>
+                        <a href="../images/gallery-6.jpg" class="gallery-zoom" target="_blank">
+                            <i class="fas fa-search-plus"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Photo 7: Wima (1x2) -->
+                <div class="gallery-item item-tall" data-category="sports">
+                    <div class="gallery-image">
+                        <img src="../images/gallery-7.jpg" alt="Football Match">
+                    </div>
+                    <div class="gallery-overlay">
+                        <h3>Football Match</h3>
+                        <p>Team spirit in action</p>
+                        <a href="../images/gallery-7.jpg" class="gallery-zoom" target="_blank">
+                            <i class="fas fa-search-plus"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Photo 8: Kawaida (1x1) -->
+                <div class="gallery-item" data-category="campus">
+                    <div class="gallery-image">
+                        <img src="../images/gallery-8.jpg" alt="Library">
+                    </div>
+                    <div class="gallery-overlay">
+                        <h3>Library</h3>
+                        <p>A place for discovery</p>
+                        <a href="../images/gallery-8.jpg" class="gallery-zoom" target="_blank">
+                            <i class="fas fa-search-plus"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Photo 9: Kawaida (1x1) -->
+                <div class="gallery-item" data-category="events">
+                    <div class="gallery-image">
+                        <img src="../images/gallery-9.jpg" alt="Parents Day">
+                    </div>
+                    <div class="gallery-overlay">
+                        <h3>Parents Day</h3>
+                        <p>Engaging our community</p>
+                        <a href="../images/gallery-9.jpg" class="gallery-zoom" target="_blank">
+                            <i class="fas fa-search-plus"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Photo 10: Kawaida (1x1) -->
+                <div class="gallery-item" data-category="classroom">
+                    <div class="gallery-image">
+                        <img src="../images/students-reading.jpg" alt="Reading Time">
+                    </div>
+                    <div class="gallery-overlay">
+                        <h3>Reading Time</h3>
+                        <p>Building a reading culture</p>
+                        <a href="../images/students-reading.jpg" class="gallery-zoom" target="_blank">
+                            <i class="fas fa-search-plus"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Photo 11: Wide (2x1) -->
+                <div class="gallery-item item-wide" data-category="campus">
+                    <div class="gallery-image">
+                        <img src="../images/playground.jpg" alt="Playground">
+                    </div>
+                    <div class="gallery-overlay">
+                        <h3>Playground</h3>
+                        <p>Fun and games</p>
+                        <a href="../images/playground.jpg" class="gallery-zoom" target="_blank">
+                            <i class="fas fa-search-plus"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Photo 12: Kawaida (1x1) -->
+                <div class="gallery-item" data-category="events">
+                    <div class="gallery-image">
+                        <img src="../images/computer-lab.jpg" alt="Computer Lab">
+                    </div>
+                    <div class="gallery-overlay">
+                        <h3>Computer Lab</h3>
+                        <p>Learning with technology</p>
+                        <a href="../images/computer-lab.jpg" class="gallery-zoom" target="_blank">
+                            <i class="fas fa-search-plus"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Load More Button (Hiari) -->
+            <div class="gallery-load-more">
+                <button class="btn btn-primary">
+                    <i class="fas fa-sync-alt"></i> Load More Photos
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Want to See More?</h2>
+            <p>Visit our school and experience the Margreth difference firsthand!</p>
+            <div class="cta-buttons">
+                <a href="../contact.html" class="btn btn-primary">Contact Us</a>
+                <a href="../admissions/index.html" class="btn btn-outline">Apply Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> P.O. Box 1234, Dar es Salaam, Tanzania</li>
+                        <li><i class="fas fa-phone"></i> +255 123 456 789</li>
+                        <li><i class="fas fa-envelope"></i> info@margreth.ac.tz</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Help & Support</h4>
+                    <ul>
+                        <li><a href="#">Parent Portal</a></li>
+                        <li><a href="#">Student Portal</a></li>
+                        <li><a href="#">Fee Structure</a></li>
+                        <li><a href="#">School Calendar</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Related Information</h4>
+                    <ul>
+                        <li><a href="../index.html#about">About Us</a></li>
+                        <li><a href="../index.html#academics">Academics</a></li>
+                        <li><a href="../admissions/index.html">Admissions</a></li>
+                        <li><a href="../news/index.html">News & Events</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Copyright &copy; 2026 Margreth Pre & Primary School. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript File -->
+    <script src="../js/main.js"></script>
+
+</body>
+</html>
