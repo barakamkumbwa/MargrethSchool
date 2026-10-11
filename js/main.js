@@ -3,6 +3,33 @@
    Main JavaScript File
    ========================================= */
 
+document.querySelectorAll('.mobile-menu-toggle').forEach(toggle => {
+    const headerContainer = toggle.closest('header .container');
+    const navigation = headerContainer?.querySelector('#site-navigation');
+
+    if (!headerContainer || !navigation) return;
+
+    const closeMenu = () => {
+        headerContainer.classList.remove('menu-open');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.setAttribute('aria-label', 'Open navigation menu');
+    };
+
+    toggle.addEventListener('click', () => {
+        const isOpen = headerContainer.classList.toggle('menu-open');
+        toggle.setAttribute('aria-expanded', String(isOpen));
+        toggle.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+    });
+
+    navigation.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+    document.addEventListener('keydown', event => {
+        if (event.key === 'Escape') closeMenu();
+    });
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) closeMenu();
+    });
+});
+
 document.addEventListener("DOMContentLoaded", function() {
     
     // Hapa utaweka JavaScript nyingine baadaye
@@ -100,6 +127,37 @@ document.addEventListener("DOMContentLoaded", function() {
                     statCards.forEach(card => {
                         card.style.opacity = '1';
                         card.style.transform = 'translateY(0)';
+
+                        const counter = card.querySelector('h3');
+                        const targetText = counter?.textContent.trim();
+                        const match = targetText?.match(/^([\d,]+)(.*)$/);
+                        if (!counter || !match || counter.dataset.counted === 'true') return;
+
+                        counter.dataset.counted = 'true';
+                        const target = Number(match[1].replace(/,/g, ''));
+                        const suffix = match[2];
+                        const hasThousandsSeparator = match[1].includes(',');
+                        const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+                        if (reducedMotion) return;
+
+                        const duration = 1600;
+                        const startTime = performance.now();
+                        const countUp = currentTime => {
+                            const progress = Math.min((currentTime - startTime) / duration, 1);
+                            const easedProgress = 1 - Math.pow(1 - progress, 3);
+                            const current = Math.round(target * easedProgress);
+                            const formatted = hasThousandsSeparator ? current.toLocaleString() : String(current);
+                            counter.textContent = `${formatted}${suffix}`;
+
+                            if (progress < 1) {
+                                requestAnimationFrame(countUp);
+                            } else {
+                                counter.textContent = targetText;
+                            }
+                        };
+
+                        requestAnimationFrame(countUp);
                     });
                     
                     // Picha zinaingia
@@ -113,7 +171,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
             });
         }, {
-            threshold: 0.2 // Inaanza pale 20% ya section inaonekana
+            // Anza mara tu sehemu inapoanza kuonekana, hata mtumiaji akifika kupitia nav.
+            threshold: 0.01
         });
 
         observer.observe(aboutSection);
@@ -151,6 +210,8 @@ const filterBtns = document.querySelectorAll('.filter-btn');
 const galleryItems = document.querySelectorAll('.gallery-item');
 
 if (filterBtns.length > 0 && galleryItems.length > 0) {
+    const galleryGrid = document.querySelector('.gallery-grid');
+
     filterBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             // Ondoa 'active' kwenye button zote
@@ -159,14 +220,25 @@ if (filterBtns.length > 0 && galleryItems.length > 0) {
             btn.classList.add('active');
 
             const filter = btn.getAttribute('data-filter');
+            galleryGrid?.classList.toggle('is-filtered', filter !== 'all');
+            galleryGrid?.classList.remove('filtered-count-1', 'filtered-count-2', 'filtered-count-3', 'filtered-count-4', 'filtered-count-5-plus');
 
+            let visibleCount = 0;
             galleryItems.forEach(item => {
                 if (filter === 'all' || item.getAttribute('data-category') === filter) {
-                    item.style.display = 'block';
+                    item.style.display = '';
+                    visibleCount++;
                 } else {
                     item.style.display = 'none';
                 }
             });
+
+            if (filter !== 'all' && galleryGrid) {
+                const countClass = visibleCount <= 4
+                    ? `filtered-count-${visibleCount}`
+                    : 'filtered-count-5-plus';
+                galleryGrid.classList.add(countClass);
+            }
         });
     });
 }
@@ -308,7 +380,7 @@ if (admissionInfoCards.length > 0) {
                     observer.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.18 });
+        }, { threshold: 0.25, rootMargin: '0px 0px -8% 0px' });
 
         admissionInfoCards.forEach(card => admissionCardObserver.observe(card));
     } else {
@@ -316,45 +388,35 @@ if (admissionInfoCards.length > 0) {
     }
 }
 
-/* --- SCHOOL-THEMED INTERNAL PAGE LOADER --- */
-const schoolPageLoader = document.createElement('div');
-schoolPageLoader.className = 'site-page-loader';
-schoolPageLoader.setAttribute('aria-hidden', 'true');
-schoolPageLoader.innerHTML = '<span class="site-loader-spinner" role="status" aria-label="Loading"></span>';
-document.body.appendChild(schoolPageLoader);
+/* --- HOMEPAGE INTRO LOADER --- */
+if (document.body.classList.contains('home-page')) {
+    const schoolPageLoader = document.createElement('div');
+    schoolPageLoader.className = 'site-page-loader';
+    schoolPageLoader.setAttribute('aria-hidden', 'true');
+    schoolPageLoader.innerHTML = '<span class="site-loader-spinner" role="status" aria-label="Loading"></span>';
+    document.body.appendChild(schoolPageLoader);
+    document.body.classList.add('is-page-entering');
 
-const initialLoaderStartedAt = performance.now();
-schoolPageLoader.classList.add('is-active');
-schoolPageLoader.setAttribute('aria-hidden', 'false');
-
-const hideInitialLoader = () => {
-    const minimumVisibleTime = 650;
-    const remainingTime = Math.max(0, minimumVisibleTime - (performance.now() - initialLoaderStartedAt));
-    window.setTimeout(() => {
-        schoolPageLoader.classList.remove('is-active');
-        schoolPageLoader.setAttribute('aria-hidden', 'true');
-    }, remainingTime);
-};
-
-if (document.readyState === 'complete') {
-    hideInitialLoader();
-} else {
-    window.addEventListener('load', hideInitialLoader, { once: true });
-}
-
-document.addEventListener('click', event => {
-    const link = event.target.closest('a');
-    if (!link || event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
-    if ((link.target && link.target !== '_self') || link.hasAttribute('download')) return;
-
-    const destination = new URL(link.href, window.location.href);
-    if (destination.origin !== window.location.origin || destination.pathname === window.location.pathname) return;
-
-    event.preventDefault();
+    const initialLoaderStartedAt = performance.now();
     schoolPageLoader.classList.add('is-active');
     schoolPageLoader.setAttribute('aria-hidden', 'false');
-    window.setTimeout(() => window.location.assign(destination.href), 800);
-});
+
+    const hideInitialLoader = () => {
+        const minimumVisibleTime = 650;
+        const remainingTime = Math.max(0, minimumVisibleTime - (performance.now() - initialLoaderStartedAt));
+        window.setTimeout(() => {
+            schoolPageLoader.classList.remove('is-active');
+            schoolPageLoader.setAttribute('aria-hidden', 'true');
+            window.requestAnimationFrame(() => document.body.classList.remove('is-page-entering'));
+        }, remainingTime);
+    };
+
+    if (document.readyState === 'complete') {
+        hideInitialLoader();
+    } else {
+        window.addEventListener('load', hideInitialLoader, { once: true });
+    }
+}
 
 /* --- BACK TO TOP BUTTON --- */
 const backToTopButton = document.createElement('button');

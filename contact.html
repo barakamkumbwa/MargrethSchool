@@ -14,8 +14,8 @@
     <!-- TOP BAR -->
     <div class="top-bar">
         <div class="container">
-            <a href="https://www.instagram.com/mkumbwa_106_jr/" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i> @mkumbwa_106_jr</a>
-            <a href="https://www.instagram.com/mkumbwa_106_jr/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i> @mkumbwa_106_jr</a>
+            <a href="https://www.instagram.com/mkumbwa_106_jr/" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i> @magreth_school</a>
+            <a href="https://www.instagram.com/mkumbwa_106_jr/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i> @magreth_school</a>
         </div>
     </div>
 
@@ -26,7 +26,10 @@
                 <i class="fas fa-graduation-cap"></i>
                 <span>Margreth School</span>
             </div>
-            <nav>
+            <button class="mobile-menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="site-navigation">
+                <span class="hamburger-lines" aria-hidden="true"><span></span><span></span><span></span></span>
+            </button>
+            <nav id="site-navigation">
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="index.html#about">About Us</a></li>
@@ -35,27 +38,26 @@
                     <li><a href="news/index.html">News</a></li>
                     <li><a href="gallery/index.html">Gallery</a></li>
                     <li><a href="contact.html" class="active">Contact</a></li>
-                    <li><a href="#" class="btn-login">Portal Login</a></li>
+                    <li><a href="portal-login.html" class="btn-login">Portal Login</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- PAGE HERO / BANNER
-    <section class="page-hero">
-        <img src="images/contact-banner.jpg" alt="Contact Margreth Pre & Primary School">
+    <!-- PAGE HERO / BANNER -->
+    <section class="page-hero contact-page-hero">
+        <img src="images/school-entrance.jpg" alt="Margreth Pre & Primary School entrance">
         <div class="page-hero-overlay"></div>
         <div class="page-hero-content">
-            <h1>Contact Us</h1>
-            <p>Home / Contact</p>
+            <h2 class="section-title-light">Contact Us</h2>
+             <p class="section-subtitle-light">Margreth Pre & Primary School</p>
         </div>
-    </section> -->
+    </section>
 
     <!-- CONTACT INTRO -->
     <section class="contact-intro">
         <div class="container">
-            <h2 class="section-title">Get in Touch</h2>
-            <p class="section-subtitle">We'd love to hear from you</p>
+            
             
             <div class="intro-text">
                 <p>Whether you're a parent, guardian, or community member, we're here to answer your questions and help you learn more about Margreth Pre & Primary School. Reach out to us through any of the channels below.</p>
@@ -97,7 +99,7 @@
                     </div>
                     <h3>Visit Us</h3>
                     <p>Our school address</p>
-                    <span>P.O. Box 1234,<br>Dar es Salaam, Tanzania</span>
+                    <span>Songambele,<br>Dodoma, Tanzania</span>
                 </div>
 
                 <!-- Card 4: Office Hours -->
@@ -115,10 +117,10 @@
             <div class="contact-social-row" aria-label="Social media accounts">
                 <span class="contact-social-label">Follow us</span>
                 <a href="https://www.instagram.com/mkumbwa_106_jr/" target="_blank" rel="noopener noreferrer" aria-label="Facebook: @mkumbwa_106_jr">
-                    <i class="fab fa-facebook-f" aria-hidden="true"></i> @mkumbwa_106_jr
+                    <i class="fab fa-facebook-f" aria-hidden="true"></i> @magreth_school
                 </a>
                 <a href="https://www.instagram.com/mkumbwa_106_jr/" target="_blank" rel="noopener noreferrer" aria-label="Instagram: @mkumbwa_106_jr">
-                    <i class="fab fa-instagram" aria-hidden="true"></i> @mkumbwa_106_jr
+                    <i class="fab fa-instagram" aria-hidden="true"></i> @magreth_school
                 </a>
             </div>
         </div>
@@ -188,17 +190,20 @@
                 <div class="contact-map-box">
                     <h3><i class="fas fa-map-marked-alt"></i> Find Us on Map</h3>
                     <p>Visit our school campus</p>
-                    
+
                     <div class="map-container">
                         <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.8504782421914!2d39.2083!3d-6.8235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwNDknMjQuNiJTIDM5wrAxMicyOS45IkU!5e0!3m2!1sen!2stz!4v1234567890" 
+                            src="https://maps.google.com/maps?q=-5.8906336%2C36.4490335&amp;z=15&amp;output=embed" 
                             width="100%" 
                             height="400" 
                             style="border:0;" 
                             allowfullscreen="" 
+                            title="Map showing Margreth Pre &amp; Primary School in Songambele, Dodoma"
                             loading="lazy">
                         </iframe>
                     </div>
+
+                    
                 </div>
 
             </div>
@@ -213,7 +218,7 @@
                 <div class="footer-col">
                     <h4>Contact Us</h4>
                     <ul>
-                        <li><i class="fas fa-map-marker-alt"></i> P.O. Box 1234, Dar es Salaam, Tanzania</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Songambele, Dodoma, Tanzania</li>
                         <li><i class="fas fa-phone"></i> +255 123 456 789</li>
                         <li><i class="fas fa-envelope"></i> info@margreth.ac.tz</li>
                     </ul>
