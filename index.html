@@ -32,8 +32,20 @@
             <nav id="site-navigation">
                 <ul>
                     <li><a href="#home" class="active">Home</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#academics">Academics</a></li>
+                    <li class="nav-dropdown">
+                        <a href="#about" aria-haspopup="true">About Us</a>
+                        <ul class="nav-submenu">
+                            <li><a href="#about">Who We Are</a></li>
+                            <li><a href="school-staff.html">Our School Staff</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-dropdown">
+                        <a href="#academics" aria-haspopup="true">Academics</a>
+                        <ul class="nav-submenu">
+                            <li><a href="#academics">Programs</a></li>
+                            <li><a href="results/index.html">Results</a></li>
+                        </ul>
+                    </li>
                     <li><a href="admissions/index.html">Admissions</a></li>
                     <li><a href="news/index.html">News</a></li>
                     <li><a href="gallery/index.html">Gallery</a></li>
@@ -54,7 +66,7 @@
                 <p>Our committed teachers, modern facilities, and innovative teaching methods ensure that every child receives the best possible start in life. We believe in fostering curiosity, creativity, and confidence in every student.</p>
                 <div class="hero-buttons">
                     <a href="admissions/index.html" class="btn btn-primary">Apply Now</a>
-                    <a href="academics/index.html" class="btn btn-outline">Explore Our Programs</a>
+                    <a href="#academics" class="btn btn-outline">Explore Our Programs</a>
                 </div>
             </div>
             <div class="hero-image">
@@ -107,7 +119,7 @@
             
             <!-- Kushoto: Text + Cards za Takwimu -->
             <div class="about-left">
-                <p class="about-text">Margreth Pre & Primary School is dedicated to providing a nurturing and stimulating environment where young minds grow, learn, and thrive. Our holistic approach combines academic excellence with character development, preparing students for a bright future.</p>
+                <p class="about-text"><strong>Location</strong><br>Margreth Pre &amp; Primary School is located in Songambele, Kongwa District, Dodoma Region, Tanzania.<br><br><strong>About</strong><br>Margreth Pre &amp; Primary School provides quality education from pre-primary to Standard VII. We are committed to academic excellence, discipline, creativity, and character development in a safe and supportive learning environment. Our goal is to nurture confident, responsible, and capable learners for a bright future.</p>
                 
                 <!-- Cards za Takwimu -->
                 <div class="stats-grid">
@@ -132,11 +144,17 @@
 
             <!-- Kulia: Picha Mbili -->
             <div class="about-right">
-                <div class="about-image image-1">
-                    <img src="images/about-1.jpeg" alt="Students at Margreth School">
+                <div class="about-image-pair">
+                    <div class="about-image image-1">
+                        <img src="images/about-1.jpeg" alt="Students at Margreth School">
+                    </div>
+                    <div class="about-image image-2">
+                        <img src="images/about-2.jpeg" alt="Classroom at Margreth School">
+                    </div>
                 </div>
-                <div class="about-image image-2">
-                    <img src="images/about-2.jpeg" alt="Classroom at Margreth School">
+                <div class="vision-mission-lines">
+                    <p><strong>Vision:</strong> To nurture knowledgeable, disciplined, creative, and responsible learners who are prepared to contribute positively to their communities and build a bright future.</p>
+                    <p><strong>Mission:</strong> To provide quality education from pre-primary to Standard VII in a safe and supportive environment that promotes academic excellence, discipline, creativity, and character development for every learner.</p>
                 </div>
             </div>
 
@@ -212,34 +230,38 @@
 
 </section>
 
-<!-- WHY JOIN OUR SCHOOL -->
+<!-- WHY CHOOSE US / CORE VALUES -->
 <section class="join-school-section" id="why-join">
     <div class="container">
-        <h2 class="section-title">Feel Free to Join Our School</h2>
-        <p class="section-subtitle">A caring place where every child can learn, grow, and build a bright future.</p>
+        <h2 class="section-title">Why Choose Us?</h2>
+        <p class="section-subtitle">Our core values guide every child to learn, grow, and build a bright future.</p>
 
         <div class="join-school-reasons">
             <details class="join-reason" open>
-                <summary>A caring and supportive environment</summary>
-                <p>We help children feel safe, welcome, and confident so they can take part, make friends, and enjoy learning every day.</p>
+                <summary>Academic Excellence</summary>
+                <p>We provide quality education from pre-primary to Standard VII and help learners build strong foundations for lifelong learning.</p>
             </details>
             <details class="join-reason">
-                <summary>Strong foundations for lifelong learning</summary>
-                <p>Our pre-primary and primary programs build literacy, numeracy, curiosity, and the good study habits children need for the next stage.</p>
+                <summary>Discipline and Responsibility</summary>
+                <p>We encourage respect, self-discipline, and responsibility so learners can make positive choices in school and in their communities.</p>
             </details>
             <details class="join-reason">
-                <summary>Learning beyond the classroom</summary>
-                <p>ICT, sports, arts, and creative activities give learners room to discover their interests and develop practical skills.</p>
+                <summary>Creativity and Curiosity</summary>
+                <p>We nurture curiosity, creative thinking, and problem-solving through engaging lessons and opportunities to explore new ideas.</p>
             </details>
             <details class="join-reason">
-                <summary>Teachers who encourage every learner</summary>
-                <p>Our school community values each child's progress and encourages responsibility, respect, and confidence along the way.</p>
+                <summary>Godly Values</summary>
+                <p>We nurture every child in godly values such as love, honesty, respect, kindness, and responsibility, helping them grow into caring and principled individuals.</p>
+            </details>
+            <details class="join-reason">
+                <summary>A Safe and Supportive Environment</summary>
+                <p>We create a welcoming place where every child feels supported, can participate, build friendships, and enjoy learning.</p>
             </details>
         </div>
 
         <div class="join-school-action">
-            <p>We would be happy to welcome your family to Margreth School.</p>
-            <a href="admissions/index.html" class="btn btn-primary">Join Our School <i class="fas fa-arrow-right"></i></a>
+            <p>We welcome families who share our commitment to helping every learner thrive.</p>
+            <a href="admissions/index.html" class="btn btn-primary">Explore Admissions <i class="fas fa-arrow-right"></i></a>
         </div>
     </div>
 </section>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply for Admission - Margreth Pre &amp; Primary School</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="top-bar">
+        <div class="container">
+            <a href="https://www.instagram.com/mkumbwa_106_jr/" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i> @magreth_school</a>
+            <a href="https://www.instagram.com/mkumbwa_106_jr/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i> @magreth_school</a>
+        </div>
+    </div>
+    <header>
+        <div class="container">
+            <div class="logo"><i class="fas fa-graduation-cap"></i><span>Margreth School</span></div>
+            <button class="mobile-menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="site-navigation">
+                <span class="hamburger-lines" aria-hidden="true"><span></span><span></span><span></span></span>
+            </button>
+            <nav id="site-navigation">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li class="nav-dropdown">
+                        <a href="../index.html#about" aria-haspopup="true">About Us</a>
+                        <ul class="nav-submenu">
+                            <li><a href="../index.html#about">Who We Are</a></li>
+                            <li><a href="../school-staff.html">Our School Staff</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-dropdown">
+                        <a href="../index.html#academics" aria-haspopup="true">Academics</a>
+                        <ul class="nav-submenu">
+                            <li><a href="../index.html#academics">Programs</a></li>
+                            <li><a href="../results/index.html">Results</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="index.html" class="active">Admissions</a></li>
+                    <li><a href="../news/index.html">News</a></li>
+                    <li><a href="../gallery/index.html">Gallery</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                    <li><a href="../portal-login.html" class="btn-login">Portal Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="admission-apply-page">
+        <div class="container">
+            <a class="admission-back-link" href="index.html"><i class="fas fa-arrow-left" aria-hidden="true"></i> Back to Admissions</a>
+            <div class="admission-form-shell" id="online-admission-form">
+            <div class="admission-form-card">
+                <div class="admission-form-heading">
+                    <div class="portal-login-icon" aria-hidden="true"><i class="fas fa-user-graduate"></i></div>
+                    <h2>Enroll for Admission</h2>
+                    <p>Complete the form below to enroll your child. Fields marked with <span>*</span> are required.</p>
+                </div>
+                <div id="admission-form-status" class="form-status" role="status" aria-live="polite" hidden></div>
+                <form action="../send-admission.php" method="post" enctype="multipart/form-data" class="admission-form" id="admission-application-form">
+                    <div class="admission-form-trap" aria-hidden="true">
+                        <label for="admission-website">Leave this field empty</label>
+                        <input id="admission-website" name="website" type="text" tabindex="-1" autocomplete="off">
+                    </div>
+
+                    <fieldset class="admission-fieldset">
+                        <legend>Child Information</legend>
+                        <div class="admission-fields-grid">
+                            <div class="admission-field">
+                                <label for="child-name">Child's Full Name <span>*</span></label>
+                                <input id="child-name" name="child_name" type="text" maxlength="150" autocomplete="name" required>
+                            </div>
+                            <div class="admission-field">
+                                <label for="child-gender">Gender <span>*</span></label>
+                                <select id="child-gender" name="gender" required>
+                                    <option value="">Select Gender</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                </select>
+                            </div>
+                            <div class="admission-field">
+                                <label for="child-dob">Date of Birth <span>*</span></label>
+                                <input id="child-dob" name="date_of_birth" type="date" required>
+                            </div>
+                            <div class="admission-field">
+                                <label for="child-citizenship">Citizenship <span>*</span></label>
+                                <input id="child-citizenship" name="citizenship" type="text" maxlength="100" required>
+                            </div>
+                            <div class="admission-field admission-field-full">
+                                <label for="child-address">Residential Address <span>*</span></label>
+                                <textarea id="child-address" name="residential_address" rows="2" maxlength="500" required></textarea>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="admission-fieldset">
+                        <legend>Admission Details</legend>
+                        <div class="admission-fields-grid">
+                            <div class="admission-field">
+                                <label for="admission-grade">Grade for Admission <span>*</span></label>
+                                <select id="admission-grade" name="grade" required>
+                                    <option value="">Select Grade</option>
+                                    <option>Daycare</option>
+                                    <option>Pre-Unit</option>
+                                    <option>Standard One</option>
+                                    <option>Standard Two</option>
+                                    <option>Standard Three</option>
+                                    <option>Standard Four</option>
+                                    <option>Standard Five</option>
+                                    <option>Standard Six</option>
+                                    <option>Standard Seven</option>
+                                </select>
+                            </div>
+                            <div class="admission-field">
+                                <label for="previous-school">Previous School</label>
+                                <input id="previous-school" name="previous_school" type="text" maxlength="180">
+                            </div>
+                            <div class="admission-field admission-field-full">
+                                <label for="medical-conditions">Particular Problems / Medical Conditions <span>*</span></label>
+                                <textarea id="medical-conditions" name="medical_conditions" rows="2" maxlength="1500" placeholder="Write None if there are no known conditions." required></textarea>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="admission-fieldset">
+                        <legend>Parents / Guardians Information</legend>
+                        <div class="admission-fields-grid">
+                            <div class="admission-field">
+                                <label for="father-name">Father's Name <span>*</span></label>
+                                <input id="father-name" name="father_name" type="text" maxlength="150" required>
+                            </div>
+                            <div class="admission-field">
+                                <label for="mother-name">Mother's Name <span>*</span></label>
+                                <input id="mother-name" name="mother_name" type="text" maxlength="150" required>
+                            </div>
+                            <div class="admission-field">
+                                <label for="guardian-phone">Phone Number <span>*</span></label>
+                                <input id="guardian-phone" name="phone" type="tel" maxlength="40" autocomplete="tel" required>
+                            </div>
+                            <div class="admission-field">
+                                <label for="guardian-email">Email Address</label>
+                                <input id="guardian-email" name="email" type="email" maxlength="254" autocomplete="email">
+                            </div>
+                            <div class="admission-field">
+                                <label for="father-occupation">Father's Occupation <span>*</span></label>
+                                <input id="father-occupation" name="father_occupation" type="text" maxlength="120" required>
+                            </div>
+                            <div class="admission-field">
+                                <label for="mother-occupation">Mother's Occupation <span>*</span></label>
+                                <input id="mother-occupation" name="mother_occupation" type="text" maxlength="120" required>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="admission-fieldset">
+                        <legend>Supporting Documents</legend>
+                        <p class="admission-upload-note">Upload clear copies in JPG, PNG, GIF, or PDF format. Maximum size: 5 MB per file.</p>
+                        <div class="admission-fields-grid">
+                            <div class="admission-field">
+                                <label for="passport-photo-1">Passport Photo 1 <span>*</span></label>
+                                <input id="passport-photo-1" name="passport_photo_1" type="file" accept=".jpg,.jpeg,.png,.gif,.pdf,image/jpeg,image/png,image/gif,application/pdf" required>
+                                <small>Recent passport-size photo</small>
+                            </div>
+                            <div class="admission-field">
+                                <label for="passport-photo-2">Passport Photo 2 <span>*</span></label>
+                                <input id="passport-photo-2" name="passport_photo_2" type="file" accept=".jpg,.jpeg,.png,.gif,.pdf,image/jpeg,image/png,image/gif,application/pdf" required>
+                                <small>Additional passport-size photo</small>
+                            </div>
+                            <div class="admission-field">
+                                <label for="birth-certificate">Birth Certificate <span>*</span></label>
+                                <input id="birth-certificate" name="birth_certificate" type="file" accept=".jpg,.jpeg,.png,.gif,.pdf,image/jpeg,image/png,image/gif,application/pdf" required>
+                                <small>Birth certificate or equivalent document</small>
+                            </div>
+                            <div class="admission-field">
+                                <label for="other-document">Other Supporting Document</label>
+                                <input id="other-document" name="other_document" type="file" accept=".jpg,.jpeg,.png,.gif,.pdf,image/jpeg,image/png,image/gif,application/pdf">
+                                <small>Any other relevant document (optional)</small>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <div class="admission-form-actions">
+                        <button class="portal-login-submit admission-submit" type="submit"><i class="fas fa-paper-plane" aria-hidden="true"></i> Submit Application</button>
+                        <button class="admission-reset" type="reset"><i class="fas fa-rotate-left" aria-hidden="true"></i> Reset Form</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col"><h4>Contact Us</h4><ul>
+                    <li><i class="fas fa-map-marker-alt"></i> Songambele, Dodoma, Tanzania</li>
+                    <li><i class="fas fa-phone"></i> +255 123 456 789</li>
+                    <li><i class="fas fa-envelope"></i> info@margreth.ac.tz</li>
+                </ul></div>
+                <div class="footer-col"><h4>Help &amp; Support</h4><ul>
+                    <li><a href="../portal-login.html">Parent Portal</a></li>
+                    <li><a href="../portal-login.html">Student Portal</a></li>
+                    <li><a href="index.html">Fee Structure</a></li>
+                    <li><a href="index.html">School Calendar</a></li>
+                </ul></div>
+                <div class="footer-col"><h4>Related Information</h4><ul>
+                    <li><a href="../index.html#about">About Us</a></li>
+                    <li><a href="../index.html#academics">Academics</a></li>
+                    <li><a href="index.html">Admissions</a></li>
+                    <li><a href="../news/index.html">News &amp; Events</a></li>
+                </ul></div>
+            </div>
+        </div>
+        <div class="footer-bottom"><p>Copyright &copy; 2026 Margreth Pre &amp; Primary School. All Rights Reserved.</p></div>
+    </footer>
+    <script src="../js/main.js"></script>
+    <script>
+        const admissionFormStatus = document.querySelector('#admission-form-status');
+        const admissionForm = document.querySelector('#admission-application-form');
+        const admissionStatus = new URLSearchParams(window.location.search).get('application');
+        const admissionStatusMessages = {
+            sent: ['Application submitted successfully. The school will contact you soon.', 'success'],
+            invalid: ['Please review the required details and uploaded documents, then submit again.', 'error'],
+            error: ['The application could not be sent right now. Please contact the school office.', 'error']
+        };
+        if (admissionStatusMessages[admissionStatus] && admissionFormStatus) {
+            const [message, type] = admissionStatusMessages[admissionStatus];
+            admissionFormStatus.textContent = message;
+            admissionFormStatus.classList.add(`form-status--${type}`);
+            admissionFormStatus.hidden = false;
+            document.querySelector('#online-admission-form')?.scrollIntoView({ block: 'start' });
+        }
+        admissionForm?.querySelectorAll('input[type="file"]').forEach(fileInput => {
+            fileInput.addEventListener('change', () => fileInput.setCustomValidity(''));
+        });
+        admissionForm?.addEventListener('submit', event => {
+            const oversizedFile = [...admissionForm.querySelectorAll('input[type="file"]')]
+                .find(input => input.files[0] && input.files[0].size > 5 * 1024 * 1024);
+            if (oversizedFile) {
+                oversizedFile.setCustomValidity('Each uploaded file must be 5 MB or smaller.');
+                oversizedFile.reportValidity();
+                event.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>
